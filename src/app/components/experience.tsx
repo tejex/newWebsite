@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { cn } from "../util";
+import { Tab } from "@mui/material";
+import { act } from "react-dom/test-utils";
 
 type Tab = {
 	title: string;
@@ -10,7 +13,7 @@ type Tab = {
 	content?: string | React.ReactNode | any;
 };
 
-export const Experience = ({
+export const ExperienceButtons = ({
 	tabs: propTabs,
 	containerClassName,
 	activeTabClassName,
@@ -34,97 +37,97 @@ export const Experience = ({
 		setActive(newTabs[0]);
 	};
 
-	const [hovering, setHovering] = useState(false);
-
 	return (
-		<>
-			<div
-				className={cn(
-					"flex flex-row items-center justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
-					containerClassName
-				)}
-			>
-				{propTabs.map((tab, idx) => (
-					<button
-						key={tab.title}
-						onClick={() => {
-							moveSelectedTabToTop(idx);
-						}}
-						onMouseEnter={() => setHovering(true)}
-						onMouseLeave={() => setHovering(false)}
-						className={cn(
-							"relative px-4 py-2 rounded-full",
-							tabClassName
-						)}
-						style={{
-							transformStyle: "preserve-3d",
-						}}
-					>
-						{active.value === tab.value && (
-							<motion.div
-								layoutId="clickedbutton"
-								transition={{
-									type: "spring",
-									bounce: 0.3,
-									duration: 0.6,
-								}}
-								className={cn(
-									"absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full ",
-									activeTabClassName
-								)}
-							/>
-						)}
-
-						<span className="relative block text-black dark:text-white">
-							{tab.title}
-						</span>
-					</button>
-				))}
+		<div className="ml-28 relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full h-full w-full">
+			<h1 className="mb-20 font-bold text-white text-4xl">
+				Professional Experience
+			</h1>
+			<div className="flex flex-row gap-x-52 w-full h-96">
+				<div className="flex flex-col w-1/6 h-72">
+					{propTabs.map((experience, idx) => {
+						return (
+							<div className="flex flex-row space-x-3">
+								<Button
+									onClick={() => {
+										moveSelectedTabToTop(idx);
+									}}
+									key={idx}
+									sx={{
+										marginBottom: "15px",
+										textTransform: "none",
+									}}
+									style={{
+										transformStyle: "preserve-3d",
+									}}
+									className="md:text-2xl w-auto text-white"
+								>
+									<div className="flex flex-row">
+										{active.value === experience.value && (
+											<motion.div
+												layoutId="clickedbutton"
+												transition={{
+													type: "spring",
+													bounce: 0.3,
+													duration: 0.6,
+												}}
+												className={cn(
+													"absolute border-4 border-teal-400 mt-3 rounded-full w-2",
+													activeTabClassName
+												)}
+											/>
+										)}
+										<h4
+											key={idx + 1}
+											className="ml-3 border-cyan-100 border-2 p-2 rounded-md"
+										>
+											{experience.title}
+										</h4>
+									</div>
+								</Button>
+							</div>
+						);
+					})}
+				</div>
+				<div className="w-full h-full">
+					<FadeInDiv
+						key={active.value}
+						active={active}
+						tabs={tabs}
+						className={cn("w-3/4", contentClassName)}
+					/>
+				</div>
 			</div>
-			<FadeInDiv
-				tabs={tabs}
-				active={active}
-				key={active.value}
-				hovering={hovering}
-				className={cn("mt-32", contentClassName)}
-			/>
-		</>
+		</div>
 	);
 };
 
 export const FadeInDiv = ({
 	className,
 	tabs,
-	hovering,
 }: {
 	className?: string;
 	key?: string;
 	tabs: Tab[];
 	active: Tab;
-	hovering?: boolean;
 }) => {
 	const isActive = (tab: Tab) => {
 		return tab.value === tabs[0].value;
 	};
 	return (
-		<div className="relative w-full h-full">
+		<div className="relative w-full h-96">
 			{tabs.map((tab, idx) => (
 				<motion.div
 					key={tab.value}
 					layoutId={tab.value}
 					style={{
 						scale: 1 - idx * 0.1,
-						top: hovering ? idx * -50 : 0,
 						zIndex: -idx,
 						opacity: idx < 3 ? 1 - idx * 0.1 : 0,
 					}}
 					animate={{
 						y: isActive(tab) ? [0, 40, 0] : 0,
 					}}
-					className={cn(
-						"w-full h-full absolute top-0 left-0",
-						className
-					)}
+					className={cn("h-96 absolute top-0 left-0", className)}
 				>
 					{tab.content}
 				</motion.div>

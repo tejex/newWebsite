@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "../util";
+import Paper from "@mui/material/Paper";
+import { Box } from "@mui/material";
 
 export function LampDemo() {
 	return (
@@ -14,10 +16,23 @@ export function LampDemo() {
 					duration: 0.8,
 					ease: "easeInOut",
 				}}
-				className="mt-40 mb-40 bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-center text-2xl font-medium tracking-tight text-transparent md:text-4xl"
+				className="mt-20 h-28 mb-20 bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-center text-2xl font-medium tracking-tight text-transparent md:text-7xl"
 			>
-				Intro Here
+				Bamlak Deju Abera
 			</motion.h1>
+			<motion.h4
+				initial={{ opacity: 0.5, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{
+					delay: 0.3,
+					duration: 0.8,
+					ease: "easeInOut",
+				}}
+				className="h-28 bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-center text-2xl font-medium tracking-tight text-transparent md:text-2xl"
+			>
+				I enjoy creating and building software, have a look around and
+				thanks for visiting!!
+			</motion.h4>
 		</LampContainer>
 	);
 }
@@ -69,9 +84,7 @@ export const LampContainer = ({
 					<div className="absolute  w-40 h-[100%] right-0 bg-slate-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
 					<div className="absolute  w-[100%] right-0 bg-slate-950 h-10 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
 				</motion.div>
-				{/* <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-slate-950 blur-2xl"></div> */}
-				{/* <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div> */}
-				{/* <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-900 blur-3xl"></div> */}
+
 				<motion.div
 					initial={{ width: "8rem" }}
 					whileInView={{ width: "16rem" }}

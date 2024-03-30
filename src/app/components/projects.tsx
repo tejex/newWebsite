@@ -43,18 +43,21 @@ export const HoverEffect = ({
 
 	return (
 		<>
-			<h1 className="ml-28 mb-20 font-bold text-4xl">Projects</h1>
-			<div className="h-[20rem] rounded-md flex flex-col antialiased bg-black dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+			<h1 className="ml-28 mb-20 mt-40 text-white font-bold text-4xl">
+				Projects
+			</h1>
+			<div className="h-[20rem] rounded-md flex flex-col antialiased bg-slate-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
 				<SpotlightProjects
 					direction="right"
 					speed="slow"
 					pauseOnHover={true}
 					items={moreItems}
+					className="bg-slate-950"
 				/>
 			</div>
 			<div
 				className={cn(
-					"grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10 w-10/12 ml-40",
+					"grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10 w-10/12 ml-36",
 					className
 				)}
 			>
@@ -62,14 +65,14 @@ export const HoverEffect = ({
 					<Link
 						href={item?.link}
 						key={item?.link}
-						className="relative group  block p-2 h-full w-full"
+						className="relative group block p-2 h-full w-full"
 						onMouseEnter={() => setHoveredIndex(idx)}
 						onMouseLeave={() => setHoveredIndex(null)}
 					>
 						<AnimatePresence>
 							{hoveredIndex === idx && (
 								<motion.span
-									className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+									className="absolute inset-0 h-full w-full bg-gray-800 dark:bg-slate-800/[0.8] block  rounded-3xl"
 									layoutId="hoverBackground"
 									initial={{ opacity: 0 }}
 									animate={{
@@ -109,9 +112,13 @@ export const Card = ({
 	return (
 		<div
 			className={cn(
-				"rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+				"rounded-xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
 				className
 			)}
+			style={{
+				background:
+					"linear-gradient(180deg, var(--slate-800), var(--slate-900)",
+			}}
 		>
 			<div className="relative z-50">
 				<div className="p-4">{children}</div>

@@ -1,5 +1,5 @@
 import { LampDemo } from "./components/lamp";
-import { Experience } from "./components/experience";
+import { ExperienceButtons } from "./components/experience";
 import { HoverEffect } from "./components/projects";
 import { IntroCard } from "./components/IntroCard";
 import Paper from "@mui/material/Paper";
@@ -42,97 +42,64 @@ export default function Home() {
 			link: "https://www.example.com/6",
 		},
 	];
+	const DummyContent = () => {
+		return (
+			<div
+				style={{ width: "1000px", height: "4000px" }}
+				className="object-cover object-left-top h-[100%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+			></div>
+		);
+	};
 
-	const tabArray = [
+	const tabs = [
 		{
-			title: "Tab 2",
-			value: "tab_value_2",
+			title: "Amazon",
+			value: "Incoming Software Engineer Intern",
 			content: (
-				<Box
-					sx={{
-						"& > :not(style)": {
-							m: 1,
-							width: 1128,
-							height: 228,
-							marginLeft: 20,
-							marginBottom: 20,
-						},
-					}}
-				>
-					<Paper
-						square={false}
-						variant="elevation"
-						elevation={3}
-					>
-						<h3>Hello Moda Soca</h3>
-						<h3>Hello Moda Soca</h3>
-						<h3>Hello Moda Soca</h3>
-					</Paper>
-				</Box>
+				<div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+					<p>Content tab</p>
+					<DummyContent />
+				</div>
 			),
 		},
 		{
-			title: "Tab 2",
-			value: "tab_value_2",
+			title: "Amazon",
+			value: "Software Dev Engineer Intern",
 			content: (
-				<Box
-					sx={{
-						"& > :not(style)": {
-							m: 1,
-							width: 1128,
-							height: 228,
-							marginLeft: 20,
-							marginBottom: 20,
-						},
-					}}
-				>
-					<Paper
-						square={false}
-						variant="elevation"
-						elevation={3}
-					>
-						<h3>Hello Moda Soca</h3>
-						<h3>Hello Moda Soca</h3>
-						<h3>Hello Moda Soca</h3>
-					</Paper>
-				</Box>
+				<div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+					<p>Product Tab</p>
+					<h1>YO WTh</h1>
+					<DummyContent />
+				</div>
 			),
 		},
 		{
-			title: "Tab 2",
-			value: "tab_value_2",
+			title: "MathTrack",
+			value: "Software Engineer Intern",
 			content: (
-				<Box
-					sx={{
-						"& > :not(style)": {
-							m: 1,
-							width: 1128,
-							height: 228,
-							marginLeft: 20,
-							marginBottom: 20,
-						},
-					}}
-				>
-					<Paper
-						square={false}
-						variant="elevation"
-						elevation={3}
-					>
-						<h3>Hello Moda Soca</h3>
-						<h3>Hello Moda Soca</h3>
-						<h3>Hello Moda Soca</h3>
-					</Paper>
-				</Box>
+				<div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+					<p>Services tab</p>
+					<DummyContent />
+				</div>
+			),
+		},
+		{
+			title: "Techpoint",
+			value: "UI / UX Design Micro Intern",
+			content: (
+				<div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+					<p>Playground tab</p>
+					<DummyContent />
+				</div>
 			),
 		},
 	];
 
 	return (
-		<div>
+		<div className="bg-slate-950">
 			<LampDemo />
 			<IntroCard />
-
-			{/* <Experience tabs={tabArray} /> */}
+			<ExperienceButtons tabs={tabs} />
 			<HoverEffect items={items} />
 		</div>
 	);
