@@ -1,8 +1,11 @@
+"use client";
 import Paper from "@mui/material/Paper";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "./MyCard";
+import { useState, useEffect } from "react";
 
 export const IntroCard = () => {
+	const [isVisible, setIsVisible] = useState(false);
 	const technologies = [
 		"Python",
 		"Typescript",
@@ -15,6 +18,12 @@ export const IntroCard = () => {
 		"C++",
 		"Java",
 	];
+	useEffect(() => {
+		// Set isVisible to true after the component mounts to trigger the fade-in effect
+		setTimeout(() => {
+			setIsVisible(true);
+		}, 100);
+	}, []);
 
 	const tech = (
 		<div className={"mb-10 hidden md:block technologies"}>
@@ -34,10 +43,17 @@ export const IntroCard = () => {
 			</ul>
 		</div>
 	);
+	const imageSource = require("../images/profilePic2.png");
 
 	return (
-		<div className="w-full mb-36">
-			<h1 className="ml-28 mb-20 font-bold text-white text-4xl">
+		<div
+			className={`w-full mb-36 ${
+				isVisible
+					? "opacity-100 transition-opacity duration-1000"
+					: "opacity-0"
+			}`}
+		>
+			<h1 className="ml-28 mb-20 font-bold from-slate-300 to-slate-500 text-4xl">
 				About Me
 			</h1>
 			<div className="flex flex-row w-full gap-60">
@@ -85,7 +101,7 @@ export const IntroCard = () => {
 							className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
 						>
 							<Image
-								src={require("../images/profilePic2.png")}
+								src={imageSource}
 								height="1000"
 								width="1000"
 								className="h-72 w-full object-cover rounded-xl group-hover/card:shadow-xl"

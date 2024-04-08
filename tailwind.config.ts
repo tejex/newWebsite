@@ -27,6 +27,9 @@ const config: Config = {
 					},
 				},
 			},
+			gap: {
+				"5": "1rem",
+			},
 		},
 	},
 	plugins: [addVariablesForColors],

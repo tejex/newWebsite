@@ -5,7 +5,6 @@ import { Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { cn } from "../util";
 import { Tab } from "@mui/material";
-import { act } from "react-dom/test-utils";
 
 type Tab = {
 	title: string;
@@ -39,7 +38,7 @@ export const ExperienceButtons = ({
 
 	return (
 		<div className="ml-28 relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full h-full w-full">
-			<h1 className="mb-20 font-bold text-white text-4xl">
+			<h1 className="mb-20 font-bold  from-slate-300 to-slate-500 text-4xl">
 				Professional Experience
 			</h1>
 			<div className="flex flex-row gap-x-52 w-full h-96">
