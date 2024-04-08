@@ -1,4 +1,4 @@
-import { LampDemo } from "./components/lamp";
+import { LampDemo } from "./components/Header";
 import { ExperienceButtons } from "./components/experience";
 import { HoverEffect } from "./components/projects";
 import { IntroCard } from "./components/IntroCard";
