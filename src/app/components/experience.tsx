@@ -46,7 +46,10 @@ export const ExperienceButtons = ({
 				<div className="flex flex-col w-1/6 h-72">
 					{propTabs.map((experience, idx) => {
 						return (
-							<div className="flex flex-row space-x-3">
+							<div
+								key={idx}
+								className="flex flex-row space-x-3"
+							>
 								<Button
 									onClick={() => {
 										moveSelectedTabToTop(idx);
@@ -71,14 +74,14 @@ export const ExperienceButtons = ({
 													duration: 0.6,
 												}}
 												className={cn(
-													"absolute border-4 border-teal-400 mt-3 rounded-full w-2",
+													"absolute border-4 border-teal-400 mt-5 rounded-full w-2",
 													activeTabClassName
 												)}
 											/>
 										)}
 										<h4
 											key={idx + 1}
-											className="ml-3 border-cyan-100 border-2 p-2 rounded-md"
+											className="ml-4 border-cyan-100 border-2 p-2 rounded-md"
 										>
 											{experience.title}
 										</h4>

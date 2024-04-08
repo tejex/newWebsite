@@ -1,5 +1,6 @@
 import Paper from "@mui/material/Paper";
-import { Box } from "@mui/material";
+import Image from "next/image";
+import { CardBody, CardContainer, CardItem } from "./MyCard";
 
 export const IntroCard = () => {
 	const technologies = [
@@ -14,6 +15,7 @@ export const IntroCard = () => {
 		"C++",
 		"Java",
 	];
+
 	const tech = (
 		<div className={"mb-10 hidden md:block technologies"}>
 			<ul className="w-80 grid grid-cols-2 md:grid grid-rows-4 grid-flow-col">
@@ -32,27 +34,18 @@ export const IntroCard = () => {
 			</ul>
 		</div>
 	);
+
 	return (
-		<div className="w-full">
+		<div className="w-full mb-36">
 			<h1 className="ml-28 mb-20 font-bold text-white text-4xl">
 				About Me
 			</h1>
-			<Box
-				sx={{
-					"& > :not(style)": {
-						m: 1,
-						width: 828,
-						height: 400,
-						marginLeft: 25,
-						marginBottom: 20,
-					},
-				}}
-			>
+			<div className="flex flex-row w-full gap-60">
 				<Paper
 					square={false}
 					variant="elevation"
 					elevation={24}
-					className="bg-slate-950 text-white custom-shadow p-10"
+					className="bg-slate-950 text-white custom-shadow p-10 w-1/2 ml-20 h-3/6"
 				>
 					<p className="lead">
 						I'm a passionate full stack developer with a keen
@@ -84,7 +77,31 @@ export const IntroCard = () => {
 					</p>
 					{tech}
 				</Paper>
-			</Box>
+				<CardContainer>
+					<CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border flex flex-col">
+						<CardItem
+							translateZ={100}
+							as="button"
+							className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+						>
+							<Image
+								src={require("../images/profilePic2.png")}
+								height="1000"
+								width="1000"
+								className="h-72 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+								alt="thumbnail"
+							/>
+						</CardItem>
+						<CardItem
+							translateZ={100}
+							as="button"
+							className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold mt-10"
+						>
+							Bamlak Deju Abera
+						</CardItem>
+					</CardBody>
+				</CardContainer>
+			</div>
 		</div>
 	);
 };
