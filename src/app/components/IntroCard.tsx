@@ -104,8 +104,8 @@ export const IntroCard = () => {
 						>
 							<Image
 								src={imageSource}
-								height="1000"
-								width="1000"
+								height="1200"
+								width="1200"
 								className="h-72 w-full object-cover rounded-xl group-hover/card:shadow-xl"
 								alt="thumbnail"
 							/>

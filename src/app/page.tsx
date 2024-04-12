@@ -2,6 +2,7 @@ import { LampDemo } from "./components/Header";
 import { ExperienceButtons } from "./components/experience";
 import { HoverEffect } from "./components/projects";
 import { IntroCard } from "./components/IntroCard";
+import { ContactMe } from "./components/contactMe";
 import { tabs } from "./components/data/experience";
 
 export default function Home() {
@@ -48,6 +49,7 @@ export default function Home() {
 			<IntroCard />
 			<ExperienceButtons tabs={tabs} />
 			<HoverEffect items={items} />
+			<ContactMe />
 		</div>
 	);
 }
