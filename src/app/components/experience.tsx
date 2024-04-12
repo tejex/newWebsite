@@ -38,10 +38,10 @@ export const ExperienceButtons = ({
 
 	return (
 		<div className="ml-28 relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full h-full w-full">
-			<h1 className="mb-20 font-bold  from-slate-300 to-slate-500 text-4xl">
+			<h1 className="mb-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
 				Professional Experience
 			</h1>
-			<div className="flex flex-row gap-x-52 w-full h-96">
+			<div className="flex flex-row gap-x-32 w-full h-96">
 				<div className="flex flex-col w-1/6 h-72">
 					{propTabs.map((experience, idx) => {
 						return (
@@ -95,7 +95,7 @@ export const ExperienceButtons = ({
 						key={active.value}
 						active={active}
 						tabs={tabs}
-						className={cn("w-3/4", contentClassName)}
+						className={cn("w-4/5", contentClassName)}
 					/>
 				</div>
 			</div>

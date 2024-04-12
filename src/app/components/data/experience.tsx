@@ -1,14 +1,18 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faAmazon } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export const experiences = [
 	{
 		company: "Amazon",
-		logo: "../images/amazon.png",
-		jobTitle: "Incoming Software Engineer Intern",
+		logo: require("../../images/Amazon.png"),
+		jobTitle: "Incoming SDE Intern",
 		duration: "May 2024 - August 2024",
 		description: ["Incoming SDE Intern, Summer 2024."],
 	},
 	{
 		company: "Amazon",
-		logo: "../images/amazon.png",
+		logo: require("../../images/Amazon.png"),
 		jobTitle: "Software Engineer Intern",
 		duration: "June 2023 - August 2023",
 		description: [
@@ -18,20 +22,20 @@ export const experiences = [
 		],
 	},
 	{
-		company: "XR_Technologies",
-		logo: "../images/amazon.png",
+		company: "MathTrack",
+		logo: require("../../images/XR_Technologies.png"),
 		jobTitle: "Software Engineer Intern",
 		duration: "May 2022 - August 2022",
 		description: [
 			"Made use of  technologies such as Javascript and React to design and develop interactive web applications",
 			"Utilized frameworks including React and Bootstrap to enhance interactive nature of web applications",
 			"Acquired fundamental knowledge of React, Angular and Node.js during internship experience",
-			"Developed a wide variety of web development skills including JavaScript, HTML, CSS, React, Redux, Typescript, Node.js and Angular",
+			"Developed a wide variety of web development skills",
 		],
 	},
 	{
 		company: "TechPoint",
-		logo: "../images/amazon.png",
+		logo: require("../../images/TechPoint.png"),
 		jobTitle: "UI / UX Design Intern",
 		duration: "May 2022 - August 2022",
 		description: [
@@ -50,15 +54,36 @@ export const tabs = experiences.map((exp, idx) => {
 		content: (
 			<div
 				key={idx}
-				className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-slate-800 to-slate-900"
+				className="w-full overflow-hidden relative rounded-2xl p-6 md:p-10 font-bold text-lightGray bg-slate-800"
 			>
-				<h1 className="text-md">
-					{exp.company} - {exp.jobTitle}
-				</h1>
-				<h5 className="text-sm mb-10">{exp.duration}</h5>
-				<ul>
-					{exp.description.map((exp) => {
-						return <li className="text-sm mb-5"> - {exp}</li>;
+				{exp.company == "Amazon" ? (
+					<div className="flex flex-row mb-5">
+						<FontAwesomeIcon
+							icon={faAmazon as IconProp}
+							className="mr-5 mt-2"
+							style={{ color: "white", fontSize: 34 }}
+						/>
+						<h1 className="font-sans md:text-3xl lg:text-4xl">
+							{exp.company} - {exp.jobTitle}
+						</h1>
+					</div>
+				) : (
+					<h1 className="font-sans text-3xl md:text-4xl">
+						{exp.company} - {exp.jobTitle}
+					</h1>
+				)}
+
+				<h5 className="md:text-md mb-3 md:mb-2">{exp.duration}</h5>
+				<ul className="">
+					{exp.description.map((exp, index) => {
+						return (
+							<li
+								key={index}
+								className="text-md font-sans mb-3 md:mb-5"
+							>
+								- {exp}
+							</li>
+						);
 					})}
 				</ul>
 			</div>

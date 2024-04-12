@@ -11,6 +11,7 @@ export const IntroCard = () => {
 		"Typescript",
 		"Javascript",
 		"React.js",
+		"Next.js",
 		"HTML",
 		"CSS",
 		"Flutter",
@@ -53,17 +54,18 @@ export const IntroCard = () => {
 					: "opacity-0"
 			}`}
 		>
-			<h1 className="ml-28 mb-20 font-bold from-slate-300 to-slate-500 text-4xl">
+			<h1 className="ml-28 mb-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
 				About Me
 			</h1>
-			<div className="flex flex-row w-full gap-60">
+
+			<div className="flex flex-row w-full md:gap-48 ml-24">
 				<Paper
 					square={false}
 					variant="elevation"
 					elevation={24}
-					className="bg-slate-950 text-white custom-shadow p-10 w-1/2 ml-20 h-3/6"
+					className="bg-slate-950 text-white custom-shadow p-10 w-1/2 h-3/6"
 				>
-					<p className="lead">
+					<p className="lead text-md">
 						I'm a passionate full stack developer with a keen
 						interest in both front and back-end development and have
 						worked with technologies like React, Next.js and
@@ -94,7 +96,7 @@ export const IntroCard = () => {
 					{tech}
 				</Paper>
 				<CardContainer>
-					<CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border flex flex-col">
+					<CardBody className="relative group/card bg-gradient-to-br from-slate-800 to-slate-900 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border flex flex-col">
 						<CardItem
 							translateZ={100}
 							as="button"

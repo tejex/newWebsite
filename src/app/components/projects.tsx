@@ -43,8 +43,8 @@ export const HoverEffect = ({
 
 	return (
 		<>
-			<h1 className="ml-28 mb-20 mt-40 text-white font-bold text-4xl">
-				Projects
+			<h1 className="ml-28 mb-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
+				Personal Projects
 			</h1>
 			<div className="h-[20rem] rounded-md flex flex-col antialiased bg-slate-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
 				<SpotlightProjects
