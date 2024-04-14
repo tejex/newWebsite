@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SpotlightProjects } from "./spotlightProjects";
 import Link from "next/link";
 import { useState } from "react";
+import { content } from "../components/data/experience";
 
 export const HoverEffect = ({
 	items,
@@ -18,42 +19,13 @@ export const HoverEffect = ({
 }) => {
 	let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-	const moreItems = [
-		{
-			quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
-			name: "Winston Churchill",
-			title: "Former British Prime Minister",
-		},
-		{
-			quote: "The only way to do great work is to love what you do.",
-			name: "Steve Jobs",
-			title: "Co-founder of Apple Inc.",
-		},
-		{
-			quote: "Life is what happens when you're busy making other plans.",
-			name: "John Lennon",
-			title: "Singer-songwriter",
-		},
-		{
-			quote: "In the end, it's not the years in your life that count. It's the life in your years.",
-			name: "Abraham Lincoln",
-			title: "16th President of the United States",
-		},
-	];
-
 	return (
 		<>
-			<h1 className="ml-28 mb-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
+			<h1 className="ml-28 mb-2 mt-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
 				Personal Projects
 			</h1>
-			<div className="h-[20rem] rounded-md flex flex-col antialiased bg-slate-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-				<SpotlightProjects
-					direction="right"
-					speed="slow"
-					pauseOnHover={true}
-					items={moreItems}
-					className="bg-slate-950"
-				/>
+			<div className="rounded-md ml-20 mr-20 antialiased bg-slate-950 dark:bg-grid-white/[0.05] relative">
+				<SpotlightProjects content={content} />
 			</div>
 			<div
 				className={cn(
