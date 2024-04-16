@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SpotlightProjects } from "./spotlightProjects";
 import Link from "next/link";
 import { useState } from "react";
-import { content } from "../components/data/experience";
+import { projects } from "./data/data";
 
 export const HoverEffect = ({
 	items,
@@ -24,8 +24,8 @@ export const HoverEffect = ({
 			<h1 className="ml-28 mb-2 mt-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
 				Personal Projects
 			</h1>
-			<div className="rounded-md ml-20 mr-20 antialiased bg-slate-950 dark:bg-grid-white/[0.05] relative">
-				<SpotlightProjects content={content} />
+			<div className="rounded-md ml-28 mb-20 mr-20 antialiased bg-slate-950 dark:bg-grid-white/[0.05] relative h-2/5">
+				<SpotlightProjects />
 			</div>
 			<div
 				className={cn(

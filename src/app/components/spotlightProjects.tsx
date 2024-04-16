@@ -1,107 +1,61 @@
-"use client";
-import React, { useRef } from "react";
-import { useMotionValueEvent, useScroll } from "framer-motion";
-import { motion } from "framer-motion";
-import { cn } from "../util";
+import React from "react";
+import { Tabs, Tab, Card, CardBody, CardHeader } from "@nextui-org/react";
+import Image from "next/image";
+import amazonImage from "../images/Amazon.png";
+import incognitoImage from "../images/incognito.png";
+import carRentalzImage from "../images/carRentalz.png";
 
-export const SpotlightProjects = ({
-	content,
-	contentClassName,
-}: {
-	content: {
-		title: string;
-		description: string;
-		content?: React.ReactNode | any;
-	}[];
-	contentClassName?: string;
-}) => {
-	const [activeCard, setActiveCard] = React.useState(0);
-	const ref = useRef<any>(null);
-	const { scrollYProgress } = useScroll({
-		// uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-		// target: ref
-		container: ref,
-		offset: ["start start", "end start"],
-	});
-	const cardLength = content.length;
-
-	useMotionValueEvent(scrollYProgress, "change", (latest) => {
-		const cardsBreakpoints = content.map((_, index) => index / cardLength);
-		const closestBreakpointIndex = cardsBreakpoints.reduce(
-			(acc, breakpoint, index) => {
-				const distance = Math.abs(latest - breakpoint);
-				if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
-					return index;
-				}
-				return acc;
-			},
-			0
-		);
-		setActiveCard(closestBreakpointIndex);
-	});
-
-	const backgroundColors = ["var(--slate-950)"];
-	const linearGradients = [
-		"linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
-		"linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
-		"linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
+export const SpotlightProjects = () => {
+	let tabs = [
+		{
+			id: "photos",
+			label: "Photos",
+			content:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			image: amazonImage,
+		},
+		{
+			id: "music",
+			label: "Music",
+			content:
+				"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+			image: incognitoImage,
+		},
+		{
+			id: "videos",
+			label: "Videos",
+			content:
+				"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			image: carRentalzImage,
+		},
 	];
+
 	return (
-		<motion.div
-			animate={{
-				backgroundColor:
-					backgroundColors[activeCard % backgroundColors.length],
-			}}
-			className="h-[32rem] overflow-y-auto flex relative space-x-32 rounded-md"
-			ref={ref}
-		>
-			<div className="div relative flex items-start px-4">
-				<div className="max-w-2xl">
-					{content.map((item, index) => (
-						<div
-							key={item.title + index}
-							className="my-20"
-						>
-							<motion.h2
-								initial={{
-									opacity: 0,
-								}}
-								animate={{
-									opacity: activeCard === index ? 1 : 0.3,
-								}}
-								className="text-2xl font-bold text-slate-100"
-							>
-								{item.title}
-							</motion.h2>
-							<motion.p
-								initial={{
-									opacity: 0,
-								}}
-								animate={{
-									opacity: activeCard === index ? 1 : 0.2,
-								}}
-								className="text-kg text-slate-300 max-w-sm mt-10"
-							>
-								{item.description}
-							</motion.p>
-						</div>
-					))}
-					<div className="h-40" />
-				</div>
-			</div>
-			<motion.div
-				animate={{
-					background:
-						linearGradients[activeCard % linearGradients.length],
-				}}
-				//we will keep this styling for the motion div in terms of its positioning but will replace the content of the card later
-				className={cn(
-					"hidden lg:block h-80 w-4/6 rounded-md bg-white sticky top-10 overflow-hidden hover:scale-125 transition-all",
-					contentClassName
-				)}
+		<div className="flex w-1/3 flex-col">
+			<Tabs
+				aria-label="Dynamic tabs"
+				items={tabs}
+				className="mb-5 mt-10"
 			>
-				{content[activeCard].content ?? null}
-			</motion.div>
-		</motion.div>
+				{(item) => (
+					<Tab
+						key={item.id}
+						title={item.label}
+					>
+						<div className="flex space-x-40">
+							<Card>
+								<CardBody>{item.content}</CardBody>
+							</Card>
+							<Image
+								alt=""
+								src={item.image}
+								width={50}
+								height={50}
+							/>
+						</div>
+					</Tab>
+				)}
+			</Tabs>
+		</div>
 	);
 };

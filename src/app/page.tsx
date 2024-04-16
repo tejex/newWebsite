@@ -3,7 +3,7 @@ import { ExperienceButtons } from "./components/experience";
 import { HoverEffect } from "./components/projects";
 import { IntroCard } from "./components/IntroCard";
 import { ContactMe } from "./components/contactMe";
-import { tabs } from "./components/data/experience";
+import { tabs } from "./components/data/data";
 
 export default function Home() {
 	const items: {

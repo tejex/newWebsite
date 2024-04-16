@@ -1,6 +1,8 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faAmazon } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import incognitoImage from "../../images/incognito.png";
 
 export const experiences = [
 	{
@@ -91,34 +93,47 @@ export const tabs = experiences.map((exp, idx) => {
 	};
 });
 
-export const content = [
+const bestProjects = [
 	{
-		title: "Collaborative Editing",
+		name: "Incognito",
 		description:
-			"Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-		content: (
-			//here is where we will put the image for the project we are currently displaying
-			<div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-				Collaborative Editing
-			</div>
-		),
+			"A back-end focused web application built with Javascript, EJS, HTML and MongoDB. Allows you to submit a secret or any piece of text, anonymously.",
+		technologies: "JavaScript HTML CSS EJS MongoDB Passport bcrypt",
+		gitHub: "https://github.com/tejex/Anonymous-Secrets-App",
+		visit: "",
+		image: require("../../images/incognito.png"),
 	},
 	{
-		title: "Real time changes",
+		name: "Spotify User Profile",
 		description:
-			"See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-		content: (
-			<div className="h-full w-full  flex items-center justify-center text-white"></div>
-		),
+			"Sign in to your spotify account to reveal your Top Artists, Top Songs, Playlists and other data about your Spotify Profile!!",
+		technologies: "Express.js React.js Styled Components Axios Spotify API",
+		gitHub: "https://github.com/tejex/spotify-userprofile",
+		visit: "https://spotify-userprofile.herokuapp.com",
+		image: require("../../images/incognito.png"),
 	},
 	{
-		title: "Version control",
+		name: "Bookie",
+		description:
+			"Blog website built with EJS. Create posts as well as view other people's posts. With sign-in and sign up with google, back-end built with MongoDB.",
+		technologies: "JavaScript HTML CSS EJS MongoDB",
+		gitHub: "https://github.com/tejex/Bookie",
+		visit: "",
+		image: require("../../images/incognito.png"),
+	},
+];
+
+export const projects = bestProjects.map((project, idx) => {
+	return {
+		title: project.name,
 		description:
 			"Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
 		content: (
-			<div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-				Version control
-			</div>
+			<Image
+				src={incognitoImage}
+				alt=""
+				className="w-full h-full"
+			/>
 		),
-	},
-];
+	};
+});
