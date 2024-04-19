@@ -1,20 +1,21 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faAmazon } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+"use-client";
 import Image from "next/image";
 import incognitoImage from "../../images/incognito.png";
+import amazonImage from "../../images/Amazon.png";
+import mathTrackImage from "../../images/XR_Technologies.png";
+import techPointImage from "../../images/TechPoint.png";
 
 export const experiences = [
 	{
 		company: "Amazon",
-		logo: require("../../images/Amazon.png"),
+		logo: amazonImage,
 		jobTitle: "Incoming SDE Intern",
 		duration: "May 2024 - August 2024",
 		description: ["Incoming SDE Intern, Summer 2024."],
 	},
 	{
 		company: "Amazon",
-		logo: require("../../images/Amazon.png"),
+		logo: amazonImage,
 		jobTitle: "Software Engineer Intern",
 		duration: "June 2023 - August 2023",
 		description: [
@@ -25,7 +26,7 @@ export const experiences = [
 	},
 	{
 		company: "MathTrack",
-		logo: require("../../images/XR_Technologies.png"),
+		logo: mathTrackImage,
 		jobTitle: "Software Engineer Intern",
 		duration: "May 2022 - August 2022",
 		description: [
@@ -37,7 +38,7 @@ export const experiences = [
 	},
 	{
 		company: "TechPoint",
-		logo: require("../../images/TechPoint.png"),
+		logo: techPointImage,
 		jobTitle: "UI / UX Design Intern",
 		duration: "May 2022 - August 2022",
 		description: [
@@ -58,23 +59,17 @@ export const tabs = experiences.map((exp, idx) => {
 				key={idx}
 				className="w-full overflow-hidden relative rounded-2xl p-6 md:p-10 font-bold text-lightGray bg-slate-800"
 			>
-				{exp.company == "Amazon" ? (
-					<div className="flex flex-row mb-5">
-						<FontAwesomeIcon
-							icon={faAmazon as IconProp}
-							className="mr-5 mt-2"
-							style={{ color: "white", fontSize: 34 }}
-						/>
-						<h1 className="font-sans md:text-3xl lg:text-4xl">
-							{exp.company} - {exp.jobTitle}
-						</h1>
-					</div>
-				) : (
-					<h1 className="font-sans text-3xl md:text-4xl">
+				<div className="flex flex-row mb-5">
+					<Image
+						src={exp.logo}
+						alt=""
+						className="w-14 mr-5 rounded-lg"
+					/>
+
+					<h1 className="font-sans md:text-3xl lg:text-4xl">
 						{exp.company} - {exp.jobTitle}
 					</h1>
-				)}
-
+				</div>
 				<h5 className="md:text-md mb-3 md:mb-2">{exp.duration}</h5>
 				<ul className="">
 					{exp.description.map((exp, index) => {
