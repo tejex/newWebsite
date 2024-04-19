@@ -52,27 +52,24 @@ export function LampDemo() {
 					duration: 0.8,
 					ease: "easeInOut",
 				}}
-				className="flex flex-row gap-5 mb-40 ml-auto mr-auto"
+				className="flex flex-row mb-40 ml-auto mr-auto"
 			>
-				<div className="ml-auto mr-auto">
+				<div className="ml-auto mr-auto flex space-x-20">
 					<a href="https://www.linkedin.com/in/bamlak-deju-b1a9a8218/">
 						<FontAwesomeIcon
 							icon={faLinkedin as IconProp}
-							className="mr-20"
 							style={{ color: "white", fontSize: 44 }}
 						/>
 					</a>
 					<a href="https://docs.google.com/document/d/1Fy-kED4Elw16dspLou8ZUbCCP11WI9tBWZcFO4fKGIM/edit?usp=sharing">
 						<FontAwesomeIcon
 							icon={faFile as IconProp}
-							className="mr-20"
 							style={{ color: "white", fontSize: 44 }}
 						/>
 					</a>
 					<a href="mailto:bamlak.deju125@gmail.com">
 						<FontAwesomeIcon
 							icon={faPaperPlane as IconProp}
-							className="mr-20"
 							style={{ color: "white", fontSize: 44 }}
 						/>
 					</a>
