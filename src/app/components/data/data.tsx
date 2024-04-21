@@ -1,7 +1,7 @@
 "use-client";
 import Image from "next/image";
 import incognitoImage from "../../images/incognito.png";
-import amazonImage from "../../images/Amazon.png";
+import amazonImage from "../../images/amazonLogo.png";
 import mathTrackImage from "../../images/XR_Technologies.png";
 import techPointImage from "../../images/TechPoint.png";
 
@@ -92,26 +92,25 @@ const bestProjects = [
 	{
 		name: "Incognito",
 		description:
-			"A back-end focused web application built with Javascript, EJS, HTML and MongoDB. Allows you to submit a secret or any piece of text, anonymously.",
-		technologies: "JavaScript HTML CSS EJS MongoDB Passport bcrypt",
-		gitHub: "https://github.com/tejex/Anonymous-Secrets-App",
+			"Python-based color detection project leveraging computer vision techniques to identify and classify colors in images with high accuracy.",
+		technologies: "Python OpenCV Numpy",
+		gitHub: "https://github.com/tejex/colorDetection",
 		visit: "",
 		image: require("../../images/incognito.png"),
 	},
 	{
 		name: "Spotify User Profile",
 		description:
-			"Sign in to your spotify account to reveal your Top Artists, Top Songs, Playlists and other data about your Spotify Profile!!",
-		technologies: "Express.js React.js Styled Components Axios Spotify API",
-		gitHub: "https://github.com/tejex/spotify-userprofile",
-		visit: "https://spotify-userprofile.herokuapp.com",
+			"Python-powered face anonymizer project utilizing computer vision algorithms to automatically blur or obscure faces in images for privacy protection",
+		gitHub: "https://github.com/tejex/faceAnonymizer",
+		visit: "",
 		image: require("../../images/incognito.png"),
 	},
 	{
-		name: "Bookie",
+		name: "Spotify User Profile Destop App",
 		description:
-			"Blog website built with EJS. Create posts as well as view other people's posts. With sign-in and sign up with google, back-end built with MongoDB.",
-		technologies: "JavaScript HTML CSS EJS MongoDB",
+			"Electron.js-based desktop app utilizing TypeScript and the Spotify Developer API for user authentication, providing personalized insights on users' top listened-to artists and songs directly from their Spotify account",
+		technologies: "Typescript HTML CSS EJS Electron.js",
 		gitHub: "https://github.com/tejex/Bookie",
 		visit: "",
 		image: require("../../images/incognito.png"),

@@ -41,8 +41,8 @@ export const ExperienceButtons = ({
 			<h1 className="mb-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
 				Professional Experience
 			</h1>
-			<div className="flex flex-row gap-x-32 w-full h-96">
-				<div className="flex flex-col w-1/6 h-72">
+			<div className="flex flex-row w-full h-96">
+				<div className="flex flex-col w-1/5 h-72">
 					{propTabs.map((experience, idx) => {
 						return (
 							<div
@@ -80,7 +80,7 @@ export const ExperienceButtons = ({
 										)}
 										<h4
 											key={idx + 1}
-											className="ml-4 border-cyan-100 border-2 p-2 rounded-md"
+											className="ml-4 border-slate-300 border-2 p-2 rounded-md"
 										>
 											{experience.title}
 										</h4>

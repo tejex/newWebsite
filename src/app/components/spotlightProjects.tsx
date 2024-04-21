@@ -11,7 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import CustomImage from "./CustomImage";
 
 export const SpotlightProjects = () => {
-	const [activeProject, setActiveProject] = useState("Photos");
+	const [activeProject, setActiveProject] = useState("SpotifyUI");
 	const [imageActive, setActive] = useState(true);
 	interface Project {
 		id: string;
@@ -23,60 +23,43 @@ export const SpotlightProjects = () => {
 		live: string;
 	}
 	let tabs: { [key: string]: Project } = {
-		Photos: {
-			id: "Photos",
-			label: "Photos",
+		SpotifyUI: {
+			id: "SpotifyUI",
+			label: "Spotify User Insights",
 			content:
-				"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+				"Unlock personalized insights with the Spotify Insights desktop app. Explore your music habits, discover trends, and delve into your listening history effortlessly.",
 			image: incognitoImage,
 			techStack: [
 				"HTML",
 				"CSS",
-				"JavaScript",
+				"Typescript",
 				"React",
 				"Node.js",
 				"Express.js",
 				"MongoDB",
 				"Git",
+				"Electron.js",
 			],
 			github: "string",
 			live: "string",
 		},
-		Music: {
-			id: "Music",
-			label: "Music",
+		HideMe: {
+			id: "HideMe",
+			label: "HideMe 👀",
 			content:
-				"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+				"This project uses computer vision to anonymize faces in images. It detects facial features and replaces them with blurred or pixelated regions, protecting privacy while preserving image context, ideal for images, videos, and live streams.",
 			image: incognitoImage,
-			techStack: [
-				"HTML",
-				"CSS",
-				"JavaScript",
-				"React",
-				"Node.js",
-				"Express.js",
-				"MongoDB",
-				"Git",
-			],
+			techStack: ["Python3", "OpenCV", "MediaPipe"],
 			github: "string",
 			live: "string",
 		},
-		Videos: {
-			id: "Videos",
-			label: "Videos",
+		FaceAuth: {
+			id: "FaceAuth",
+			label: "FaceAuth",
 			content:
-				"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+				"Authenticate effortlessly with FaceAuth. Utilize facial recognition for secure, personalized access, ensuring reliable account authentication.",
 			image: carRentalzImage,
-			techStack: [
-				"HTML",
-				"CSS",
-				"JavaScript",
-				"React",
-				"Node.js",
-				"Express.js",
-				"MongoDB",
-				"Git",
-			],
+			techStack: ["Python", "OpenCV", "HTML", "CSS"],
 			github: "string",
 			live: "string",
 		},
@@ -87,9 +70,9 @@ export const SpotlightProjects = () => {
 	};
 
 	return (
-		<div className="flex w-fullflex-col text-red-200 mt-12 h-4/6">
+		<div className="flex w-fullflex-col text-red-200 mt-12 h-4/6 w-full">
 			<div className="w-1/3 grid grid-cols-1 h-full">
-				<div className="flex flex-row items-center justify-start w-full gap-x-10 h-full">
+				<div className="flex flex-row items-center justify-start w-full gap-x-5 h-full">
 					{Object.values(tabs).map((project) => {
 						return (
 							<button
@@ -117,13 +100,15 @@ export const SpotlightProjects = () => {
 										}}
 									/>
 								)}
-								{project.label}
+								{project.id}
 							</button>
 						);
 					})}
 				</div>
-				<div className="mt-10 w-full border-2 rounded-lg border-slate-300 p-5 text-white transition-all">
-					<h1 className="text-4xl mb-10">{activeProject}</h1>
+				<div className="mt-10 h-full w-full border-2 rounded-lg border-slate-300 p-5 text-white transition-all">
+					<h1 className="text-4xl mb-10">
+						{tabs[activeProject].label}
+					</h1>
 					<p>{tabs[activeProject].content}</p>
 					<ul
 						className={`mt-5 grid grid-cols-${
@@ -139,7 +124,7 @@ export const SpotlightProjects = () => {
 							);
 						})}
 					</ul>
-					<div className="grid grid-cols-2 w-1/3 mt-10">
+					<div className="grid grid-cols-2 w-1/3 mt-5">
 						<a href={tabs[activeProject].github}>
 							<FontAwesomeIcon
 								icon={faGithub as IconProp}
