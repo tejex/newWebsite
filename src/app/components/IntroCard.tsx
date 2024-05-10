@@ -55,12 +55,12 @@ export const IntroCard = () => {
                 About Me
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 p-10 ml-0 md:ml-28">
+            <div className="grid grid-cols-1 md:grid-cols-3 p-10 ml-0 md:ml-28">
                 <Paper
                     square={false}
                     variant="elevation"
                     elevation={24}
-                    className="bg-slate-950 text-white custom-shadow p-10 full h-auto mb-20 md:mb-0"
+                    className="bg-slate-950 text-white custom-shadow col-span-2 p-10 full h-auto mb-20 md:mb-0"
                 >
                     <p className="block md:hidden">
                         Hello!! Thanks for visiting my website, I'm currently a
@@ -100,8 +100,8 @@ export const IntroCard = () => {
                     </p>
                     {tech}
                 </Paper>
-                <CardContainer>
-                    <CardBody className="relative group/card bg-gradient-to-br from-slate-800 to-slate-900 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border flex flex-col">
+                <CardContainer className="col-span-1">
+                    <CardBody className="relative group/card bg-gradient-to-br from-slate-800 to-slate-900 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-full rounded-xl p-6 border flex flex-col">
                         <CardItem
                             translateZ={100}
                             as="button"
