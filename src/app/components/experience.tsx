@@ -41,8 +41,8 @@ export const ExperienceButtons = ({
             <h1 className="mb-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
                 Professional Experience
             </h1>
-            <div className="flex flex-row w-full h-96">
-                <div className="grid grid-cols-1 w-1/5 h-72">
+            <div className="grid grid-cols-5 w-full h-full">
+                <div className="grid grid-cols-1 h-4/5 col-span-1">
                     {propTabs.map((experience, idx) => {
                         return (
                             <div key={idx} className="flex flex-row space-x-3">
@@ -87,7 +87,7 @@ export const ExperienceButtons = ({
                         )
                     })}
                 </div>
-                <div className="w-full h-full">
+                <div className="w-full h-full col-span-4">
                     <FadeInDiv
                         key={active.value}
                         active={active}
