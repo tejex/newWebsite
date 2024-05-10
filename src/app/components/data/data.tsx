@@ -124,10 +124,10 @@ export const items: {
     visit?: string
 }[] = [
     {
-        title: 'Car Rentalz',
+        title: 'Face Anonymizer',
         description:
-            'Full Stack Car Rental website application. App includes 3d renderings of cars made possible with the use of Three.js',
-        link: 'https://github.com/tejex/carRentalz',
+            'This project employs computer vision techniques to anonymize faces in images, ensuring privacy protection by detecting and obscuring facial features with various anonymization methods.',
+        link: 'https://github.com/tejex/faceAnonymizer',
     },
     {
         title: 'Color Detection - Computer Vision',

@@ -43,8 +43,8 @@ export const SpotlightProjects = () => {
             github: 'string',
             live: 'string',
         },
-        carRentalz: {
-            id: 'carRentalz',
+        CarRentalz: {
+            id: 'CarRentalz',
             label: 'CarRentalz',
             content:
                 'MERN Stack Application, Caters to two types of users: Managers and Users. Users can submit rental requests, while Managers have the authority to approve or deny these requests. View cars in 3D!!',
