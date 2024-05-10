@@ -55,7 +55,7 @@ export const IntroCard = () => {
                 About Me
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 p-10 ml-0 md:ml-28">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-10 ml-0 md:ml-28">
                 <Paper
                     square={false}
                     variant="elevation"
