@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 import CustomImage from './CustomImage'
 
 export const SpotlightProjects = () => {
-    const [activeProject, setActiveProject] = useState('SpotifyUI')
+    const [activeProject, setActiveProject] = useState('S-UI')
     const [imageActive, setActive] = useState(true)
     interface Project {
         id: string
@@ -23,8 +23,8 @@ export const SpotlightProjects = () => {
         live?: string
     }
     let tabs: { [key: string]: Project } = {
-        SpotifyUI: {
-            id: 'SpotifyUI',
+        'S-UI': {
+            id: 'S-UI',
             label: 'Spotify User Insights',
             content:
                 'Unlock personalized insights with the Spotify Insights desktop app. Explore your music habits, discover trends, and delve into your listening history effortlessly.',
@@ -77,9 +77,9 @@ export const SpotlightProjects = () => {
     }
 
     return (
-        <div className="flex w-fullflex-col text-red-200 mt-12 h-4/6 w-full">
-            <div className="w-1/3 grid grid-cols-1 h-full">
-                <div className="flex flex-row items-center justify-start w-full gap-x-5 h-full">
+        <div className="grid grid-cols-3 text-red-200 mt-12 h-full w-full">
+            <div className="col-span-1 grid grid-cols-1 h-full w-full">
+                <div className="items-center justify-start w-full gap-x-5 h-full">
                     {Object.values(tabs).map((project) => {
                         return (
                             <button
@@ -150,7 +150,7 @@ export const SpotlightProjects = () => {
                     </div>
                 </div>
             </div>
-            <div className="ml-10 w-2/3 h-full">
+            <div className="ml-10 h-full col-span-2">
                 <CustomImage imageSource={tabs[activeProject].image} />
             </div>
         </div>
