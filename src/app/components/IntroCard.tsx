@@ -41,7 +41,7 @@ export const IntroCard = () => {
             </ul>
         </div>
     )
-    const imageSource = require('../images/profilePic2.png')
+    const imageSource = require('../images/profilePic3.png')
 
     return (
         <div

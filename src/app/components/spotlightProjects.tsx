@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import incognitoImage from '../images/incognito.png'
-import carRentalzImage from '../images/carRentalz.png'
+import faceAuth from '../images/faceAuth.png'
+import carRentalz from '../images/carRentalz.png'
 import spotifyUI from '../images/spotifyDesktop1.png'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faLink } from '@fortawesome/free-solid-svg-icons'
@@ -43,14 +43,23 @@ export const SpotlightProjects = () => {
             github: 'string',
             live: 'string',
         },
-        HideMe: {
-            id: 'HideMe',
-            label: 'HideMe 👀',
+        carRentalz: {
+            id: 'carRentalz',
+            label: 'CarRentalz',
             content:
-                'This project uses computer vision to anonymize faces in images. It detects facial features and replaces them with blurred or pixelated regions, protecting privacy while preserving image context, ideal for images, videos, and live streams.',
-            image: incognitoImage,
-            techStack: ['Python3', 'OpenCV', 'MediaPipe'],
-            github: 'https://github.com/tejex/faceAnonymizer',
+                'MERN Stack Application, Caters to two types of users: Managers and Users. Users can submit rental requests, while Managers have the authority to approve or deny these requests. View cars in 3D!!',
+            image: carRentalz,
+            techStack: [
+                'HTML',
+                'CSS',
+                'Typescript',
+                'React',
+                'Node.js',
+                'Express.js',
+                'MongoDB',
+                'Three.js',
+            ],
+            github: 'https://github.com/tejex/carRentalz',
             live: 'string',
         },
         FaceAuth: {
@@ -58,7 +67,7 @@ export const SpotlightProjects = () => {
             label: 'Face Attendance System',
             content:
                 'Authenticate effortlessly with FaceAuth. Utilize facial recognition for secure, personalized access, ensuring reliable account authentication.',
-            image: carRentalzImage,
+            image: faceAuth,
             techStack: ['Python', 'OpenCV', 'HTML', 'CSS'],
             github: 'https://github.com/tejex/faceAttendanceSystem',
             live: 'string',

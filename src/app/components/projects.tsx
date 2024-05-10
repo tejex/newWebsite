@@ -23,12 +23,12 @@ export const HoverEffect = ({
             <h1 className="md:ml-28 ml-14 mb-2 mt-20 font-bold text-transparent bg-gradient-to-r from-slate-300 to-slate-500 text-4xl bg-clip-text">
                 Personal Projects
             </h1>
-            <div className="hidden md:block rounded-md ml-28 mb-10 mr-20 antialiased bg-slate-950 dark:bg-grid-white/[0.05] relative h-2/5">
+            <div className="hidden md:block rounded-md ml-28 mb-10 mr-20 antialiased bg-slate-950 dark:bg-grid-white/[0.05] relative h-full">
                 <SpotlightProjects />
             </div>
             <div
                 className={cn(
-                    'grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10 w-10/12 ml-auto mr-auto md:ml-36',
+                    'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 w-10/12 ml-auto mr-auto md:ml-36',
                     className
                 )}
             >
@@ -43,7 +43,7 @@ export const HoverEffect = ({
                         <AnimatePresence>
                             {hoveredIndex === idx && (
                                 <motion.span
-                                    className="absolute inset-0 h-full w-full bg-gray-800 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                                    className="absolute inset-0 h-full w-full bg-gray-800 dark:bg-slate-800/[0.8] block rounded-3xl"
                                     layoutId="hoverBackground"
                                     initial={{ opacity: 0 }}
                                     animate={{

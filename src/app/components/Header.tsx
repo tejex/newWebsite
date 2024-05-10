@@ -10,7 +10,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { config } from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false
 
-export function LampDemo() {
+export function Header() {
     const breaks = Array.from({ length: 5 }, (_, index) => index)
     return (
         <div className="w-full h-full bg-slate-950 ml-auto mr-auto">

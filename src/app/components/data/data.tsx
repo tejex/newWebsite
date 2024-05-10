@@ -117,6 +117,51 @@ const bestProjects = [
     },
 ]
 
+export const items: {
+    title: string
+    description: string
+    link: string
+    visit?: string
+}[] = [
+    {
+        title: 'Car Rentalz',
+        description:
+            'Full Stack Car Rental website application. App includes 3d renderings of cars made possible with the use of Three.js',
+        link: 'https://github.com/tejex/carRentalz',
+    },
+    {
+        title: 'Color Detection - Computer Vision',
+        description:
+            'This project utilizes computer vision techniques to detect and track colors in real-time video streams from webcams.',
+        link: 'https://github.com/tejex/colorDetection',
+    },
+    {
+        title: 'Reality',
+        description:
+            'Solar System model built with Javascript, React, React-three-fiber and three.js technologies',
+        link: 'https://bamsolarsystem.netlify.app/',
+        visit: 'https://bamsolarsystem.netlify.app/',
+    },
+    {
+        title: 'Bookie',
+        description:
+            "Blog website built with EJS. Allows users to create posts as well as view other people's posts, while also allowing sign-in and sign up with google. Back-end built with MongoDB and Mongoose.",
+        link: 'https://github.com/tejex/Bookie',
+    },
+    {
+        title: 'Blog Website',
+        description:
+            'This blog website uses EJS templating, Node and express as well as JavaScript, HTML and CSS to allow users to make a blog post and post it onto the home page.',
+        link: 'https://github.com/tejex/Blog-Website',
+    },
+    {
+        title: 'Incognito',
+        description:
+            'A back-end focused web application built with Javascript, EJS, HTML and MongoDB. Submit a secret or any piece of text, anonymously!!',
+        link: 'https://github.com/tejex/Anonymous-Secrets-App',
+    },
+]
+
 export const projects = bestProjects.map((project, idx) => {
     return {
         title: project.name,
