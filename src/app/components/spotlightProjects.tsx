@@ -20,7 +20,7 @@ export const SpotlightProjects = () => {
         image: any
         techStack: string[]
         github: string
-        live: string
+        live?: string
     }
     let tabs: { [key: string]: Project } = {
         SpotifyUI: {
@@ -40,8 +40,7 @@ export const SpotlightProjects = () => {
                 'Git',
                 'Electron.js',
             ],
-            github: 'string',
-            live: 'string',
+            github: 'https://github.com/tejex/Spotify-User-Profile-Desktop-App',
         },
         CarRentalz: {
             id: 'CarRentalz',
@@ -60,7 +59,6 @@ export const SpotlightProjects = () => {
                 'Three.js',
             ],
             github: 'https://github.com/tejex/carRentalz',
-            live: 'string',
         },
         FaceAuth: {
             id: 'FaceAuth',
