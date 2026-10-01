@@ -1,84 +1,92 @@
-'use-client'
+'use client'
 import Image from 'next/image'
 import incognitoImage from '../../images/incognito.png'
 import amazonImage from '../../images/amazonLogo.png'
-import mathTrackImage from '../../images/XR_Technologies.png'
-import techPointImage from '../../images/TechPoint.png'
 
 export const experiences = [
     {
+        company: 'Kamsa',
+        tabLabel: 'Kamsa',
+        logo: null,
+        jobTitle: 'Software Engineer',
+        duration: 'February 2025 - August 2026',
+        location: 'Philadelphia, PA',
+        description: [
+            'Cut form completion time by 70% by redesigning modal workflows using Next.js routing and interception.',
+            'Improved Largest Contentful Paint by 30% on data-heavy pages by implementing server-side pagination with TanStack Table for datasets of 1,000+ rows.',
+            'Eliminated 40% of redundant API calls by standardizing client-side data fetching with SWR caching across TypeScript, Python, and Django services.',
+            'Decreased financial and employee data discrepancies by 20% by building automated currency-normalization services with Python and Django.',
+        ],
+    },
+    {
         company: 'Amazon',
+        tabLabel: "Amazon '24",
         logo: amazonImage,
-        jobTitle: 'Incoming SDE Intern',
+        jobTitle: 'Software Development Engineer Intern',
         duration: 'May 2024 - August 2024',
-        description: ['Incoming SDE Intern, Summer 2024.'],
+        location: 'Sunnyvale, CA',
+        description: [
+            'Built an automated Java health-checking service for a multi-threaded distributed platform, reducing on-call diagnosis time from 1-2 hours to 15-30 minutes.',
+            'Designed lock-free concurrent error tracking for reliable host-health evaluation, preventing race conditions under 100k-300k simulated requests.',
+            'Refactored service integrations into reusable modules, simplifying support for Amazon.com retail and Prime Video.',
+        ],
     },
     {
         company: 'Amazon',
+        tabLabel: "Amazon '23",
         logo: amazonImage,
-        jobTitle: 'Software Engineer Intern',
+        jobTitle: 'Software Development Engineer Intern',
         duration: 'June 2023 - August 2023',
+        location: 'Bellevue, WA',
         description: [
-            'Spearheaded the design and implementation of multiple features on a Language Model Playground',
-            'Wrote and conducted tests on components of LLM playground using the React Testing Library, Jest and Mocha',
-            'Implemented REST APIs and backend functionalities using Node.js, Typescript and Socket.io',
-        ],
-    },
-    {
-        company: 'MathTrack',
-        logo: mathTrackImage,
-        jobTitle: 'Software Engineer Intern',
-        duration: 'May 2022 - August 2022',
-        description: [
-            'Made use of  technologies such as Javascript and React to design and develop interactive web applications',
-            'Utilized frameworks including React and Bootstrap to enhance interactive nature of web applications',
-            'Acquired fundamental knowledge of React, Angular and Node.js during internship experience',
-            'Developed a wide variety of web development skills',
-        ],
-    },
-    {
-        company: 'TechPoint',
-        logo: techPointImage,
-        jobTitle: 'UI / UX Design Intern',
-        duration: 'May 2022 - August 2022',
-        description: [
-            'Worked in a team of 10 to design an innovative solution to increase tech jobs in Indiana',
-            'Developed a user friendly UI for the solution as a member of the production group',
-            'Obtained various skills from this internship experience such as the importance of working in a team in the tech industry',
-            "Part of the winning team for the Tech Jobs in Indiana category in TechPoint's The Pitch competition.",
+            'Developed user-facing features for an AI/LLM playground with React and TypeScript, delivering responsive model-selection and configuration workflows.',
+            'Built a dynamic Material UI configuration interface that let users adjust model parameters such as temperature and randomness in real time.',
+            'Reduced build and load times by 90% through caching, lazy loading, and frontend performance tuning while implementing dynamic LLM model switching.',
         ],
     },
 ]
 
 export const tabs = experiences.map((exp, idx) => {
     return {
-        title: exp.company,
+        title: exp.tabLabel,
         value: idx + '',
         content: (
             <div
                 key={idx}
-                className="w-full overflow-hidden relative rounded-2xl p-6 md:p-10 font-bold text-lightGray bg-slate-800"
+                className="w-full relative rounded-2xl p-6 md:p-8 font-bold text-lightGray bg-slate-800"
             >
                 <div className="flex flex-row mb-5">
-                    <Image
-                        src={exp.logo}
-                        alt=""
-                        className="w-14 mr-5 rounded-lg"
-                    />
+                    {exp.logo ? (
+                        <Image
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            className="w-14 h-14 object-contain mr-5 rounded-lg"
+                        />
+                    ) : (
+                        <div
+                            aria-hidden="true"
+                            className="w-14 h-14 mr-5 shrink-0 rounded-lg bg-teal-400 text-slate-950 flex items-center justify-center text-2xl"
+                        >
+                            {exp.company.charAt(0)}
+                        </div>
+                    )}
 
-                    <h1 className="font-sans md:text-3xl lg:text-4xl">
+                    <h1 className="font-sans md:text-2xl lg:text-3xl">
                         {exp.company} - {exp.jobTitle}
                     </h1>
                 </div>
-                <h5 className="md:text-md mb-3 md:mb-2">{exp.duration}</h5>
+                <div className="flex flex-wrap justify-between gap-2 mb-4 text-sm md:text-base">
+                    <h5>{exp.duration}</h5>
+                    <h5>{exp.location}</h5>
+                </div>
                 <ul className="">
-                    {exp.description.map((exp, index) => {
+                    {exp.description.map((description, index) => {
                         return (
                             <li
                                 key={index}
-                                className="text-md font-sans mb-3 md:mb-5"
+                                className="text-sm lg:text-base font-sans mb-3"
                             >
-                                - {exp}
+                                - {description}
                             </li>
                         )
                     })}
