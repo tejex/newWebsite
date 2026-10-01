@@ -55,7 +55,7 @@ export function Header() {
                 className="flex flex-row mb-40 ml-auto mr-auto"
             >
                 <div className="ml-auto mr-auto grid grid-cols-3 gap-20">
-                    <a href="https://www.linkedin.com/in/bamlak-deju-b1a9a8218/">
+                    <a href="https://www.linkedin.com/in/bamlak-abera-b1a9a8218/">
                         <FontAwesomeIcon
                             icon={faLinkedin as IconProp}
                             style={{ color: 'white', fontSize: 44 }}
