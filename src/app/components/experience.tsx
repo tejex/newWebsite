@@ -42,25 +42,26 @@ export const ExperienceButtons = ({
                 Professional Experience
             </h1>
             <div className="grid grid-cols-5 w-full h-full">
-                <div className="grid grid-cols-1 h-4/5 col-span-1">
+                <div className="flex flex-col items-start gap-3 col-span-1">
                     {propTabs.map((experience, idx) => {
                         return (
-                            <div key={idx} className="flex flex-row space-x-3">
+                            <div key={idx} className="relative">
                                 <Button
                                     onClick={() => {
                                         moveSelectedTabToTop(idx)
                                     }}
                                     key={idx}
                                     sx={{
-                                        marginBottom: '15px',
+                                        minWidth: 0,
+                                        padding: '4px',
                                         textTransform: 'none',
                                     }}
                                     style={{
                                         transformStyle: 'preserve-3d',
                                     }}
-                                    className="md:text-2xl w-auto text-white"
+                                    className="w-auto text-base lg:text-lg text-white"
                                 >
-                                    <div className="flex flex-row">
+                                    <div className="relative flex items-center">
                                         {active.value === experience.value && (
                                             <motion.div
                                                 layoutId="clickedbutton"
@@ -70,14 +71,14 @@ export const ExperienceButtons = ({
                                                     duration: 0.6,
                                                 }}
                                                 className={cn(
-                                                    'absolute border-4 border-teal-400 mt-5 rounded-full w-2',
+                                                    'absolute -left-1 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-teal-400',
                                                     activeTabClassName
                                                 )}
                                             />
                                         )}
                                         <h4
                                             key={idx + 1}
-                                            className="ml-4 border-slate-300 border-2 p-2 rounded-md"
+                                            className="ml-4 rounded-md border-2 border-slate-300 px-3 py-1.5"
                                         >
                                             {experience.title}
                                         </h4>
